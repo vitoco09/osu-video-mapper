@@ -40,7 +40,7 @@ for frame in range(NUM_FRAMES):
 
 circles = '\n'.join(hitcircles)
 
-with open('map_template.osu', 'r') as template:
+with open('templates/map_bw_template.osu', 'r') as template:
     BEATMAP_CONTENT = template.read()
 
 with open(BEATMAP_OUTPUT, 'w') as f:
