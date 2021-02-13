@@ -15,7 +15,7 @@ First we have FFMPEG process any video and have it split into different frames, 
 
 You must execute `process_beatmap.sh` in a terminal (cmd, powershell, etc in windows) with 2 parameters, the first one must be your video directory and the second one an output directory refering to your .osu file.
 
-Before executing you might want to edit `map_template.osu` as you wish for metadata, it's important that map_template is in the same folder as `make_bw_beatmap.py`
+Before executing you might want to edit the templates in `template` folder as you wish for metadata, it's important that those templates are located there for the script to work.
 
 ### Considerations
 Since osu! is not optimized for showing more than 10000 hitcircles per second you must consider that your computer is capable of running such a monster, for reference running bad apple on a laptop with an Intel Core I5-10300H, 16GB of RAM DDR4 3200MHz made osu! consume 3GB of RAM while loading the map and took about 2-3 minutes to load completely. A medium-tier graphics card would ease rendering the beatmap.
