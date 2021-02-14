@@ -5,5 +5,4 @@ workspace.code-workspace
 workdir/*
 valecallampalacueca.osu
 videos/*
-map_template.osu
 debug.sh
