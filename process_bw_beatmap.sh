@@ -12,6 +12,6 @@ cd workdir
 ffmpeg -i $VID -vf scale=32:24,fps=$FPS image_%d.png
 
 cd ..
-python make_beatmap.py ./workdir $OUTPUT $FPS
+python make_bw_beatmap.py ./workdir $OUTPUT $FPS
 
 rm -r workdir

@@ -13,7 +13,7 @@ def near(val1, val2, val3, epsilon):
 
 WORKDIR = 'D:/osu-video-mapper/workdir'
 BEATMAP_OUTPUT = 'D:/Program Files/osu!/Songs/beatmap-637480869421055243-Masayoshi_Minoshima_-_Bad_Apple_feat._nomico_-_Touhou_PV_iichan (1)/badapel - badapel (vitoco) [badapel].osu'
-FPS = 3
+FPS = 10
 
 # WORKDIR = sys.argv[1]
 # BEATMAP_OUTPUT = sys.argv[2]
@@ -49,7 +49,7 @@ colors = ('red','green','blue','cyan','magenta','yellow','white','grey')
 colors_rgb = ('255,0,0','0,255,0','0,0,255','0,255,255','255,0,255','255,255,0','255,255,255','127,127,127')
 first = -1
 
-for frame in range(50):
+for frame in range(NUM_FRAMES):
 
     current_frame = Image.open(WORKDIR + f'/image_{frame+1}.png')
     
