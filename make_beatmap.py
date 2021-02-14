@@ -11,13 +11,13 @@ def near(val1, val2, val3, epsilon):
         return False
     return False
 
-WORKDIR = 'D:/osu-video-mapper/workdir'
-BEATMAP_OUTPUT = 'D:/Program Files/osu!/Songs/beatmap-637480869421055243-Masayoshi_Minoshima_-_Bad_Apple_feat._nomico_-_Touhou_PV_iichan (1)/badapel - badapel (vitoco) [badapel].osu'
-FPS = 10
+# WORKDIR = 'D:/osu-video-mapper/workdir'
+# BEATMAP_OUTPUT = 'D:/Program Files/osu!/Songs/beatmap-637480869421055243-Masayoshi_Minoshima_-_Bad_Apple_feat._nomico_-_Touhou_PV_iichan (1)/badapel - badapel (vitoco) [badapel].osu'
+# FPS = 10
 
-# WORKDIR = sys.argv[1]
-# BEATMAP_OUTPUT = sys.argv[2]
-# FPS = int(sys.argv[3])
+WORKDIR = sys.argv[1]
+BEATMAP_OUTPUT = sys.argv[2]
+FPS = int(sys.argv[3])
 NUM_FRAMES = len([name for name in os.listdir(WORKDIR) if os.path.isfile(os.path.join(WORKDIR, name))])
 
 # Value in ms.
@@ -47,7 +47,10 @@ color_map = {'red':(1, 101, 85, 69, 53, 37, 21, 5, 1),
 
 colors = ('red','green','blue','cyan','magenta','yellow','white','grey')
 colors_rgb = ('255,0,0','0,255,0','0,0,255','0,255,255','255,0,255','255,255,0','255,255,255','127,127,127')
-first = -1
+
+
+
+
 
 for frame in range(NUM_FRAMES):
 
@@ -72,7 +75,7 @@ for frame in range(NUM_FRAMES):
                     first = 0
                 COMBO_COLOUR = 0
 
-            elif pixel[0] < 128 and pixel[1] > 128 and pixel[2] < 128: # Green
+            elif pixel[0] < 80 and pixel[1] > 180 and pixel[2] < 80: # Green
                 hitcircle = f"{16*(i+1)},{16*(j+1)},{round(OFFSET + FRAME_PERIOD*frame)},{color_map['green'][COMBO_COLOUR]},0,0:0:0:0:"
                 hitcircles.append(hitcircle)
                 if COMBO_COLOUR == -1:
@@ -122,7 +125,7 @@ for frame in range(NUM_FRAMES):
                 COMBO_COLOUR = 7
 
 
-
+# osu! is weird, the first combo color is Combo2, and the last is Combo1.
 beatmap_combo_colors = {}
 beatmap_combo_colors[colors[(first+7)%8]] = 'Combo1 : ' + colors_rgb[(first+7)%8]
 beatmap_combo_colors[colors[first%8]] = 'Combo2 : ' + colors_rgb[first%8]
